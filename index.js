@@ -18,16 +18,18 @@
 'use strict';
 
 var dust = require('dustjs-linkedin'),
-    engine = require('./lib/engine');
+    engine = require('./lib/engine'),
+    utils = require('./lib/utils');
 
 // Load helpers
 require('dustjs-helpers');
 
 exports.create = function (app, config) {
    
-    console.info("called into adaro create");
-    return Object.create(dust, {
+    var module = utils.tryRequire('karka'),
+        specialization = module && module.create(app, config);
 
+    return Object.create(dust, {
         onLoad: {
             enumerable: true,
 
@@ -43,12 +45,12 @@ exports.create = function (app, config) {
 
         js: {
             enumerable: true,
-            value: engine.create.bind(undefined, 'js', config)
+            value: engine.create.bind(undefined, 'js', config, specialization)
         },
 
         dust: {
             enumerable: true,
-            value: engine.create.bind(undefined, 'dust', config)
+            value: engine.create.bind(undefined, 'dust', config, specialization)
         }
     });
 };
