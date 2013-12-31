@@ -37,6 +37,6 @@
     "grunt-mocha-test": "~0.7.0"
   },
   "peerDependencies": {
-    "karka": "git://github.com/pvenkatakrishnan/karka.git""
+    "karka": "git://github.com/pvenkatakrishnan/karka.git"
   }
 }
