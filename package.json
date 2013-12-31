@@ -23,7 +23,8 @@
     }
   ],
   "dependencies": {
-    "core-util-is": "~1.0.0"
+    "core-util-is": "~1.0.0",
+    "karka": "git://github.com/pvenkatakrishnan/karka.git"
   },
   "devDependencies": {
     "mocha": "~1.9.0",
@@ -37,6 +38,6 @@
     "grunt-mocha-test": "~0.7.0"
   },
   "peerDependencies": {
-    "karka": "git://github.com/pvenkatakrishnan/karka.git"
+    
   }
 }
